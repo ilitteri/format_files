@@ -1,5 +1,5 @@
 for file in *; do
-	new_name=$(echo "$file" | tr '[:upper:]' '[:lower:]' | tr ' ' '_')
+	new_name=$(tr '[:upper:] ' '[:lower:]_' <<< $file)
        	if [ "$file" != "$new_name" ]; then
 		mv "$file" "$new_name"
          	echo "$file is now $new_name"
